@@ -8,6 +8,55 @@
     <link rel="stylesheet" href="styles/cart.css">
   </head>
   <body>
-    
+    <main>
+      <p class="links">
+        <a class='inactive-link' href='/'>Home</a> /
+        <a href='/cart'>Cart</a>
+      </p>
+      <div class="empty-container">
+        <div class="table-container">
+          <table class="fixed-table">
+            <tr>
+              <td>Product</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Subtotal</td>
+            </tr>
+          </table>
+          <table class="products-table"></table>
+        </div>
+        <div class="buttons">
+          <button><a href='/'>Return To Shop</a></button
+          ><button class="update-btn">Update Cart</button>
+        </div>
+        <div class="coupon-total-box">
+          <div class="coupon-box">
+            <input type="text" placeholder="Coupon Code" />
+            <button class="red-button">Apply Coupon</button>
+          </div>
+          <div class="total-box">
+            <p>Cart Total</p>
+            <div class="subtotal">
+              <p>Subtotal:</p>
+              <span></span>
+            </div>
+            <div class="shipping">
+              <p>Shipping:</p>
+              <span>Free</span>
+            </div>
+            <div class="discount">
+              <p>Discount:</p>
+              <span class="discountPercent">0</span>
+            </div>
+            <div class="total">
+              <p>Total:</p>
+              <span></span>
+            </div>
+            <button class="red-button">Process To Checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
+      <script src="cart.js"></script>
   </body>
 </html>

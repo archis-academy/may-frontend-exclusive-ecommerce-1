@@ -1,0 +1,200 @@
+main {
+    max-width: 1300px;
+    margin: 100px auto;
+    box-sizing: border-box;
+  }
+  main a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .red-button {
+    padding: 15px 50px;
+    font-size: inherit;
+  
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(219, 68, 68, 1);
+    color: white;
+  }
+  .links {
+    margin-bottom: 100px;
+  }
+  .inactive-link {
+    opacity: 0.6;
+  }
+  
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  td {
+    width: 120px;
+  }
+  tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 35px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  
+  td:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+  }
+  td:last-child {
+    max-width: 70px;
+  }
+  
+  td > img {
+    width: 50px;
+  }
+  .image-td {
+    position: relative;
+  }
+  .image-td:hover .remove-icon {
+    display: block;
+  }
+  .remove-icon {
+    width: 17px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    display: none;
+  }
+  
+  .quantity-box {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 10px 15px;
+    position: relative;
+  }
+  .quantity-box span {
+    padding: 15px;
+  }
+  .up-icon,
+  .down-icon {
+    width: 12px;
+  }
+  .up-icon {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+  }
+  .down-icon {
+    position: absolute;
+    bottom: 3px;
+    right: 10px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  .buttons button {
+    padding: 15px 50px;
+    background-color: inherit;
+    border-color: rgba(0, 0, 0, 0.5);
+    font-size: inherit;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+  .coupon-total-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .coupon-box {
+    margin-bottom: 30px;
+  }
+  .coupon-box input {
+    padding: 15px;
+    width: 290px;
+    font-size: inherit;
+    border-radius: 4px;
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+  .coupon-box button {
+    margin-left: 15px;
+  }
+  .total-box {
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 30px 25px;
+    width: 40%;
+  }
+  .total-box > p {
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .total-box > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  .subtotal,
+  .shipping,
+  .discount {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  .total-box button {
+    margin: 10px auto;
+    display: block;
+  }
+  .empty-cart {
+    height: 250px;
+    text-align: center;
+  }
+  .empty-cart h1 {
+    font-size: 40px;
+  }
+  .empty-cart p {
+    margin: 20px 0;
+  }
+  .empty-cart button {
+    margin-top: 10px;
+  }
+  @media (max-width: 900px) {
+    .total-box,
+    .coupon-box {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    main {
+      font-size: 15px;
+    }
+    .table-container {
+      overflow-x: auto;
+      display: block;
+    }
+    .buttons button {
+      padding: 15px;
+    }
+    .coupon-box input {
+      width: 200px;
+    }
+    .coupon-box button {
+      padding: 15px 20px;
+    }
+  }
+  @media (max-width: 500px) {
+    .total-box,
+    .coupon-box {
+      width: 100%;
+    }
+  }
+  
