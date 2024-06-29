@@ -109,6 +109,7 @@ function productFlashSale(products) {
                     </div>
                     <div class="product-stars_voting">
                       <p>(${product.rating.count})</p>
+                      asd
                     </div>
                   </div>
             </div>`
