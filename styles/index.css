@@ -1,3 +1,55 @@
+.homepage-title-boxes {
+  display: flex;
+  align-items: center;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+.homepage-title-boxes div {
+  width: 20px;
+  height: 40px;
+  background-color: #db4444;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.homepage-title-boxes h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #db4444;
+  font-size: 16px;
+}
+.browse-by-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.browse-by-container {
+  font-family: "Poppins", sans-serif;
+}
+.category-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.category-box {
+  height: 175px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: transform 0.5s ease;
+}
+.homepage-browse-category {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
 /* Umut Start Today's Product*/
 .todaysProduct {
     position: relative;

@@ -1,3 +1,13 @@
+const CategoryBoxes = document.querySelectorAll(".category-box");
+for (let i = 0; i < CategoryBoxes.length; i++) {
+  CategoryBoxes[i].addEventListener("click", () => {
+    for (let j = 0; j < CategoryBoxes.length; j++) {
+      CategoryBoxes[j].style.backgroundColor = "#FFFFFF";
+    }
+    CategoryBoxes[i].style.backgroundColor = "#FF0000";
+  });
+}
+
 //Timer Start
 const countdownDate = new Date().getTime() + (4 * 24 * 60 * 60 * 1000);
 
