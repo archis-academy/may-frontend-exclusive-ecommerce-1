@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exclusive E-Commerce Login</title>
-    <link rel="stylesheet" href="styles/shared.css">
-    <link rel="stylesheet" href="styles/login.css">
-  </head>
-  <body>
 
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exclusive E-Commerce Login</title>
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="loginPageContainer">
+    <div class="loginPageImages">
+      <img class="loginPageImage" src="images/loginPage.png" alt="loginPageImage" />
+    </div>
+    <div class="loginPageForm">
+      <form class="loginPageFormContainer">
+        <div class="loginPageFormTitle">
+          <p>Log in to Exclusive</p>
+        </div>
+        <div class="loginPageFormExplanation">
+          <p>Enter your details bellow</p>
+        </div>
+        <div class="loginPageFormInput">
+          <input type="text" name="logInUser" placeholder="Email or Phone Number" id="username" value="" />
+        </div>
+        <div class="loginPageFormInput">
+          <input type="password" name="logInPassword" placeholder="Password" id="password" value="" />
+        </div>
+        <p class="loginPageFormErrorMessage"></p>
+        <div class="loginPageFormButton">
+          <input type="button" value="Log in" />
+          <p class="loginPageFormButtonForgetPassword">Forget Password?</p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+
 </html>

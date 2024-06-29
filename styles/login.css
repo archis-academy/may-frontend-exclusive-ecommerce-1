@@ -1,0 +1,98 @@
+.loginPageContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 5% 20% 0 0;
+    justify-content: space-between;
+}
+
+.loginPageForm {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.loginPageFormTitle {
+    font-family: "inter", sans-serif;
+    font-size: 36px;
+}
+
+.loginPageFormExplanation {
+    font-size: 16px;
+}
+
+.loginPageFormInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.loginPageFormInput input {
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.loginPageFormButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.loginPageFormButton input {
+    width: 130px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: #DB4444;
+    color: #fff;
+}
+
+.loginPageFormButtonForgetPassword {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    color: #DB4444;
+    cursor: pointer;
+    margin: 5% 0 0 0;
+}
+
+@media (max-width: 1200px) {
+    .loginPageImages {
+        width: 80%;
+    }
+
+    .loginPageForm {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .loginPageImages {
+        position: relative;
+        margin: 0 0 0 20px;
+        width: 100%;
+        z-index: -1;
+        -webkit-filter: blur(8px);
+    }
+
+    .loginPageForm {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        margin: 20% 10%;
+        z-index: 1;
+        width: 80%;
+        padding: 20px;
+
+    }
+}
+
+@media (max-width: 200px) {
+    .loginPageImages {
+        display: none;
+    }
+}

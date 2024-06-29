@@ -8,8 +8,67 @@
     <link rel="stylesheet" href="styles/index.css" />
 
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
   </head>
   <body>
+    <!-- Umut Start Today Prodact-->
+  <div class="todaysProduct">
+    <div class="todaysProductTitle">
+      <div class="todaysProductLine"></div>
+      <h3 class="todaysTitle">Today's</h3>
+    </div>
+    <div class="todayFlashSales">
+      <div class="tfsTitle">
+        <h2>Flash Sales</h2>
+      </div>
+      <div class="todayProductTimer">
+        <div class="tfsDays">
+          <p>Days</p>
+          <h2 id="remainingDay"></h2>
+        </div>
+        <div class="tfsSection">
+          <h3>:</h3>
+        </div>
+        <div class="tfsHours">
+          <p>Hours</p>
+          <h2 id="remaininHours"></h2>
+        </div>
+        <div class="tfsSection">
+          <h3>:</h3>
+        </div>
+        <div class="tfsMunite">
+          <p>Munite</p>
+          <h2 id="remaininMinutes"></h2>
+        </div>
+        <div class="tfsSection">
+          <h3>:</h3>
+        </div>
+        <div class="tfsSeconds">
+          <p>Seconds</p>
+          <h2 id="remaininSeconds"></h2>
+        </div>
+        <div class="productDirection">
+          <div class="button-direction-prev">
+            <button class="direction-Button" id="prevButton"><img src="images/left.png" /></button>
+          </div>
+          <div class="button-direction-next">
+            <button class="direction-Button" id="nextButton"><img src="images/right.png" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-Flash-Sale-Container" id="productFlashSaleContainer">
+    </div>
+  </div>
+  <div class="productButton">
+    <input type="button" class="productViewButton" value="View All Product">
+  </div>
+  <!-- Umut End Today Prodact-->
     <div class="homepage-browse-category">
       <div class="homepage-title-boxes">
         <div class="red-box"></div>

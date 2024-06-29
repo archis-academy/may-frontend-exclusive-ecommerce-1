@@ -49,6 +49,7 @@
   margin: 0 auto;
   max-width: 1300px;
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -187,3 +188,214 @@ body {
   flex-direction: row;
   gap: 20px;
 }
+
+/* Umut Start Today's Product*/
+.todaysProduct {
+    position: relative;
+    align-items: center;
+    max-width: 1240px;
+    margin: auto;
+}
+
+.todaysProductTitle {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0 0 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.todaysProductLine {
+    width: 20px;
+    height: 40px;
+    border: 1px;
+    border-radius: 4px;
+    background-color: #DB4444;
+}
+
+.todaysTitle {
+    font-family: "Poppins", sans-serif;
+    color: #DB4444;
+}
+
+.todayFlashSales {
+    display: flex;
+    padding: 10px 0 0 10px;
+    gap: 100px;
+}
+
+.tfsTitle {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+}
+
+.todayProductTimer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    line-height: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.todayProductTimer>div>h2 {
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.tfsSection {
+    font-size: 35px;
+    color: #DB4444;
+}
+
+.productDirection {
+    display: flex;
+    position: absolute;
+    right: 0;
+    border: none;
+    gap: 15px;
+}
+
+.direction-Button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#prevButton {
+    display: none;
+}
+
+.productViewButton {
+    padding: 20px 40px;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: #DB4444;
+    color: #fff;
+}
+
+.product-Flash-Sale-Container {
+    display: flex;
+    max-width: 1300px;
+    overflow-x: auto;
+    gap: 30px;
+}
+
+.product-card {
+    justify-content: center;
+    margin: 10px 10px;
+
+}
+
+.product-Flash-Sale-Container::-webkit-scrollbar {
+    display: none;
+}
+
+.img-container>img {
+    position: relative;
+    overflow: hidden;
+    width: 270px;
+    height: 270px;
+    z-index: -1;
+}
+
+.add-card {
+    transition: all 0s ease-in-out;
+    transform: translate(0, 100%);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.img-container:hover .add-card {
+    transition: all 1s ease-in-out;
+    transform: translate(0, 0);
+    background-color: #000000;
+    color: #fff;
+}
+
+.product-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    height: 50px;
+    justify-content: center;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Poppins", sans-serif;
+    color: #DB4444;
+    height: 30px;
+}
+
+.product-price_block {
+    color: #000000;
+    opacity: 50%;
+    text-decoration: line-through;
+}
+
+.product-stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-stars_voting {
+    opacity: 50%;
+}
+
+.discountDetails {
+    position: relative;
+    top: -275px;
+    left: 0;
+    background-color: #DB4444;
+    width: 80px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.favoriButton {
+    position: relative;
+    top: -380px;
+    right: -220px;
+    width: 20px;
+}
+
+#favori-Button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 40px;
+    color: black;
+    background-color: #fff;
+}
+
+@media (max-width: 900px) {
+    .todayFlashSales {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3px;
+        margin: 0 0 45px 0;
+    }
+
+    .productDirection {
+        left: 170px;
+        bottom: 590px;
+    }
+}
+
+/* Umut Start Today's Product*/
+
