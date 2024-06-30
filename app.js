@@ -60,33 +60,49 @@ function updateCountSecond() {
 
 const endpoint = "https://fakestoreapi.com/products";
 
-async function getProdcuts() {
+let allProducts = [];
+let wishListProduct = [];
+async function getProducts() {
   const response = await fetch(endpoint);
   const products = await response.json();
-
+  allProducts = products;
   productFlashSale(products)
 
 }
 
-getProdcuts();
+getProducts();
 
+function addToCart(productId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const productToAdd = allProducts.find((product) => product.id === productId);
+
+  const isProductInCart = cartProducts.some(
+    (product) => product.id === productId
+  );
+
+  if (!isProductInCart) {
+    const newCart = [...cartProducts, { ...productToAdd, quantity: 1 }];
+    localStorage.setItem("cartProducts", JSON.stringify(newCart));
+  } else {
+    alert("Bu ürün zaten sepette ekli!");
+  }
+}
 
 function productFlashSale(products) {
   const productFlashSaleContainer = document.querySelector("#productFlashSaleContainer");
   let priceDiscount;
-  let priceDiscountDetails = "-50%";
   const productFS = products
     .map((product) => {
       return `<div class="product-card">
                   <div class="img-container">
                     <img src="${product.image}" />
-                    <div class="discountDetails">${priceDiscountDetails}</div>       
+                    <div class="discountDetails">-50%</div>       
                     <div class="add-card">
-                      <h3 class="add-to-cart" id="addToCart">Add To Cart</h3>
+                      <h3 onClick="addToCart(${product.id})" class="add-to-cart" id="addToCart">Add To Cart</h3>
                     </div>
                   </div>
-                  <div class="favoriButton">
-                      <input type="button" id="favori-Button" value="♡">
+                  <div class="favori-Button">
+                      <input onClick="favoriButton(${product.id})" type="button" id="favoriButton" value="♡">
                     </div>
                   <div class="product-title">
                     <h5 class="product-title-text">${product.title}</h5>
@@ -108,21 +124,22 @@ function productFlashSale(products) {
             </div>`
     }).join("");
   productFlashSaleContainer.innerHTML = productFS;
-  const addToProductCart = document.querySelectorAll('.add-card');
-  addToProductCart.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      console.log(e.target.parentElement.parentElement.parentElement.querySelector('.product-title-text').textContent);
-      console.log(e.target.parentElement.parentElement.parentElement.querySelector('.product-price').querySelector('h4').textContent);
-    })
-  })
-  const favBtns = document.querySelectorAll('.favoriButton');
-  favBtns.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.target.textContent = "♥";
-    })
-  })
 }
+function favoriButton(favorite) {
+  const wishList = JSON.parse(localStorage.getItem("wishListProduct")) || [];
+  const WishListToAdd = allProducts.find((product) => product.id === favorite);
 
+  const ProductInFavorite = wishList.some(
+    (product) => product.id === favorite
+  );
+
+  if (!ProductInFavorite) {
+    const newWishList = [...wishList, { ...WishListToAdd, quantity: 1 }];
+    localStorage.setItem("wishListProduct", JSON.stringify(newWishList));
+  } else {
+    alert("Bu ürün zaten favorilere ekli!");
+  }
+}
 
 function renderRatingStars(rating) {
   let stars = "";
