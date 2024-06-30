@@ -75,11 +75,31 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        }
+    }
 }
+
 @media (max-width: 200px) {
     .loginPageImages {
         display: none;
     }
 }
->>>>>>> Stashed changes
+
+.new-arrival-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 10px;
+}
+.new-arrival-box-women{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+.new-arrival-box-ps{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
