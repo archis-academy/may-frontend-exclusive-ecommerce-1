@@ -1,3 +1,116 @@
+// Erkin Homepage Header START
+const endpoint = "https://fakestoreapi.com/products";
+
+let allProducts = [];
+let wishListProduct = [];
+async function getProducts() {
+  const response = await fetch(endpoint);
+  const products = await response.json();
+  allProducts = products;
+  productFlashSale(products);
+}
+
+getProducts();
+
+const hhSearchInput = document.querySelector("#hhSearchInput");
+const hhSearchResult = document.querySelector(".hh-search-dropdown");
+
+const hhResponsiveSearchInput = document.querySelector(
+  "#hhResponsiveSearchInput"
+);
+const hhResponsiveSearchResult = document.querySelector(
+  "#hhResponsiveSearchResult"
+);
+
+function hhHandleSearch(inputElement, resultElement) {
+  inputElement.addEventListener("keyup", () => {
+    const searchText = inputElement.value.toLowerCase();
+
+    const filteredProducts = allProducts.filter((product) => {
+      return product.title.toLowerCase().includes(searchText);
+    });
+
+    renderHeaderProducts(filteredProducts, searchText, resultElement);
+  });
+}
+
+hhHandleSearch(hhSearchInput, hhSearchResult);
+hhHandleSearch(hhResponsiveSearchInput, hhResponsiveSearchResult);
+
+function renderHeaderProducts(products, searchText, resultElement) {
+  if (searchText === "") {
+    resultElement.innerHTML = "";
+    return;
+  }
+
+  if (products.length === 0) {
+    resultElement.innerHTML = "<p>Ürün bulunamadı.</p>";
+    return;
+  }
+
+  const productsHTML = products
+    .map((product) => {
+      return `
+        <a href="product-page.html?id=${product.id}" class="product-link">
+          <div class="product">
+            <img src="${product.image}">
+            <h3>${product.title}</h3>
+            <p>$${product.price}</p>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
+
+  resultElement.innerHTML = productsHTML;
+}
+
+const slides = document.querySelector(".hh-slides");
+const navButtons = document.querySelectorAll(".hh-nav-button");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+  currentSlide = index;
+
+  navButtons.forEach((button, idx) => {
+    button.classList.toggle("active", idx === currentSlide);
+  });
+}
+
+showSlide(0);
+
+let hhIsMenuVisible = false;
+
+function toggleHhLinksCopy() {
+  const hhLinksCopy = document.querySelector(".hh-links-copy");
+  hhIsMenuVisible = !hhIsMenuVisible;
+  if (hhIsMenuVisible) {
+    hhLinksCopy.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  } else {
+    hhLinksCopy.style.display = "none";
+    document.body.style.overflow = "";
+  }
+}
+
+document
+  .querySelector(".hh-menu-button")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    toggleHhLinksCopy();
+  });
+
+document
+  .querySelector(".hh-links-copy .hh-close-button")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    toggleHhLinksCopy();
+  });
+// Erkin Homepage Header END
+
 const CategoryBoxes = document.querySelectorAll(".category-box");
 for (let i = 0; i < CategoryBoxes.length; i++) {
   CategoryBoxes[i].addEventListener("click", () => {
@@ -190,7 +303,10 @@ function updateCountSecond() {
 // Timer End
 //Flash Sale Start
 
-const endpoint = "https://fakestoreapi.com/products";
+function addToCart(productId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const productToAdd = allProducts.find((product) => product.id === productId);
+
 
 async function getProdcuts() {
   const response = await fetch(endpoint);
@@ -201,24 +317,41 @@ async function getProdcuts() {
 
 getProdcuts();
 
+
+  const isProductInCart = cartProducts.some(
+    (product) => product.id === productId
+  );
+
+  if (!isProductInCart) {
+    const newCart = [...cartProducts, { ...productToAdd, quantity: 1 }];
+    localStorage.setItem("cartProducts", JSON.stringify(newCart));
+  } else {
+    alert("Bu ürün zaten sepette ekli!");
+  }
+}
+
+
 function productFlashSale(products) {
   const productFlashSaleContainer = document.querySelector(
     "#productFlashSaleContainer"
   );
   let priceDiscount;
-  let priceDiscountDetails = "-50%";
   const productFS = products
     .map((product) => {
       return `<div class="product-card">
                   <div class="img-container">
                     <img src="${product.image}" />
-                    <div class="discountDetails">${priceDiscountDetails}</div>       
+                    <div class="discountDetails">-50%</div>       
                     <div class="add-card">
-                      <h3 class="add-to-cart" id="addToCart">Add To Cart</h3>
+                      <h3 onClick="addToCart(${
+                        product.id
+                      })" class="add-to-cart" id="addToCart">Add To Cart</h3>
                     </div>
                   </div>
-                  <div class="favoriButton">
-                      <input type="button" id="favori-Button" value="♡">
+                  <div class="favori-Button">
+                      <input onClick="favoriButton(${
+                        product.id
+                      })" type="button" id="favoriButton" value="♡">
                     </div>
                   <div class="product-title">
                     <h5 class="product-title-text">${product.title}</h5>
@@ -241,6 +374,7 @@ function productFlashSale(products) {
     })
     .join("");
   productFlashSaleContainer.innerHTML = productFS;
+
   const addToProductCart = document.querySelectorAll(".add-card");
   addToProductCart.forEach((item) => {
     item.addEventListener("click", (e) => {
@@ -262,7 +396,23 @@ function productFlashSale(products) {
       e.target.textContent = "♥";
     });
   });
+
 }
+function favoriButton(favorite) {
+  const wishList = JSON.parse(localStorage.getItem("wishListProduct")) || [];
+  const WishListToAdd = allProducts.find((product) => product.id === favorite);
+
+  const ProductInFavorite = wishList.some((product) => product.id === favorite);
+
+
+  if (!ProductInFavorite) {
+    const newWishList = [...wishList, { ...WishListToAdd, quantity: 1 }];
+    localStorage.setItem("wishListProduct", JSON.stringify(newWishList));
+  } else {
+    alert("Bu ürün zaten favorilere ekli!");
+  }
+}
+
 
 function renderRatingStars(rating) {
   let stars = "";
@@ -315,5 +465,4 @@ window.addEventListener("load", initSlider);
 function makeDiscountPrice(price, discount) {
   return (price - (price * discount) / 100).toFixed(2);
 }
-
 //Flash Sale End

@@ -1,7 +1,7 @@
 //Log-in Page Start - UMUT
 
-const users = [
-  {
+const users = [  
+{
       id: 1,
       username: 'admin',
       password: 'admin'
@@ -39,7 +39,6 @@ const users = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-// Select the login button
 const loginButton = document.querySelector('.loginPageFormButton input[type="button"]');
 const errorMessage = document.querySelector('.loginPageFormErrorMessage');
 const usernameInput = document.getElementById('username');

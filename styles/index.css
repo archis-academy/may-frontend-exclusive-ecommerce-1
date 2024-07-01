@@ -1,3 +1,364 @@
+/* Erkin Homepage Header START */
+.homepage-header {
+  margin-bottom: 50px;
+}
+.homepage-header * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hh-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid #000;
+  background-color: #000;
+  width: 100%;
+  height: 48px;
+}
+.hh-top-title {
+  color: #fafafa;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
+.hh-lang {
+  position: absolute;
+  right: 150px;
+}
+.hh-nav {
+  width: 100%;
+  height: 38px;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hh-logo {
+  font-family: "Inter", sans-serif;
+  color: #000000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+.hh-links {
+  display: flex;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.hh-links a:hover {
+  text-decoration: underline;
+}
+.hh-input-box {
+  display: flex;
+  align-items: center;
+}
+
+.hh-input-wrapper {
+  width: 100%;
+  position: relative;
+  flex-grow: 1;
+}
+
+.hh-input {
+  width: 243px;
+  height: 38px;
+  border: none;
+  padding: 7px 30px 7px 20px;
+  background-color: #f5f5f5;
+}
+
+.hh-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hh-input-box img {
+  margin-left: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+.hh-search-dropdown {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  background-color: #fff;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.product img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.product h3 {
+  font-size: 14px;
+  margin: 0;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product p {
+  font-size: 14px;
+  margin: 0;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link:hover .product {
+  background-color: #eef5ff;
+}
+.hh-nav-line {
+  width: 100%;
+  height: 1px;
+  background-color: #003285;
+  margin-top: 10px;
+}
+.hh-media-line {
+  width: 1px;
+  height: 100%;
+  background-color: #f5f5f5;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.hh-media {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #f4f4f4;
+}
+.hh-sidebar {
+  width: 25%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.hh-sidebar-links {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+.hh-sidebar-links li {
+  margin-bottom: 10px;
+}
+.hh-sidebar-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+}
+.hh-sidebar-links a:hover {
+  color: #007bff;
+}
+.hh-arrow {
+  font-size: 16px;
+  transition: transform 0.3s;
+}
+.hh-sidebar-links a:hover .arrow {
+  transform: translateX(5px);
+}
+.hh-slider-container {
+  position: relative;
+  width: 892px;
+  height: 344px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.hh-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.hh-slide {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+}
+
+.hh-text-content {
+  width: 50%;
+  padding: 20px;
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px 0 0 50px;
+}
+
+.hh-text-content img {
+  width: 40px;
+  height: 49px;
+}
+
+.hh-text-content p {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 48px);
+  line-height: 60px;
+}
+.hh-text-header {
+  display: flex;
+  gap: 20px;
+}
+.hh-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 2vw, 16px);
+  line-height: 24px;
+  align-content: center;
+}
+.hh-shop-now {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hh-media-navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.hh-nav-button {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.hh-nav-button.active {
+  background-color: #ff0000;
+}
+.hh-ss {
+  background-color: black;
+  height: 344px;
+}
+.hh-links-copy {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.399);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.hh-links-copy li {
+  width: 100%;
+}
+.hh-links-copy a {
+  width: 100%;
+}
+.hh-menu-button {
+  display: none;
+}
+@media (max-width: 1025px) {
+  .hh-top {
+    display: none;
+  }
+  .hh-media {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hh-sidebar {
+    width: 100%;
+  }
+  .hh-sidebar-links li {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .hh-arrow {
+    display: none;
+  }
+  .hh-slider-container {
+    width: 100%;
+  }
+  .hh-text-header img {
+    width: 30px;
+    height: 39px;
+  }
+}
+@media (max-width: 950px) {
+  .hh-hide {
+    display: none;
+  }
+  .hh-menu-button {
+    display: block;
+  }
+}
+@media (max-width: 850px) {
+  .hh-text-content {
+    display: none;
+  }
+  .hh-slide img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+}
+@media (max-width: 550px) {
+  .hh-links-copy {
+    width: 100%;
+  }
+}
+/* Erkin Homepage Header END */
+
 .homepage-title-boxes {
   display: flex;
   align-items: center;
@@ -375,14 +736,18 @@ body {
   padding: 5px;
 }
 
-.favoriButton {
+
+.favori-Button {
+
   position: relative;
   top: -380px;
   right: -220px;
   width: 20px;
 }
 
-#favori-Button {
+
+#favoriButton {
+
   width: 50px;
   height: 50px;
   border-radius: 50%;
