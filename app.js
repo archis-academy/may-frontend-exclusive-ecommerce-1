@@ -7,8 +7,10 @@ for (let i = 0; i < CategoryBoxes.length; i++) {
     CategoryBoxes[i].style.backgroundColor = "#FF0000";
   });
 }
+// MA-6 Start
+
 const productsContainer = document.querySelector("#productsContainer");
-const endpoint = "https://fakestoreapi.com/products";
+const endpoint1 = "https://fakestoreapi.com/products";
 let allProducts = [];
 let currentIndex = 0;
 const itemsPerPage = 8;
@@ -16,7 +18,7 @@ let showingAll = false;
 
 async function getProducts() {
   try {
-    const response = await fetch(endpoint);
+    const response = await fetch(endpoint1);
     const products = await response.json();
     allProducts = products;
     renderProducts();
@@ -135,9 +137,10 @@ document.getElementById("viewAllBtn").addEventListener("click", () => {
 
 getProducts();
 
+// MA-6 Ended
 
 //Timer Start
-const countdownDate = new Date().getTime() + (4 * 24 * 60 * 60 * 1000);
+const countdownDate = new Date().getTime() + 4 * 24 * 60 * 60 * 1000;
 
 const remainingDay = document.getElementById("remainingDay");
 const remaininHours = document.getElementById("remaininHours");
@@ -164,7 +167,9 @@ function updateCountHours() {
   const now = new Date().getTime();
   const distance = countdownDate - now;
 
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   remaininHours.innerHTML = `${hours}`;
 }
 function updateCountMinute() {
@@ -182,7 +187,6 @@ function updateCountSecond() {
   remaininSeconds.innerHTML = `${seconds}`;
 }
 
-
 // Timer End
 //Flash Sale Start
 
@@ -192,15 +196,15 @@ async function getProdcuts() {
   const response = await fetch(endpoint);
   const products = await response.json();
 
-  productFlashSale(products)
-
+  productFlashSale(products);
 }
 
 getProdcuts();
 
-
 function productFlashSale(products) {
-  const productFlashSaleContainer = document.querySelector("#productFlashSaleContainer");
+  const productFlashSaleContainer = document.querySelector(
+    "#productFlashSaleContainer"
+  );
   let priceDiscount;
   let priceDiscountDetails = "-50%";
   const productFS = products
@@ -233,52 +237,63 @@ function productFlashSale(products) {
                       <p>(${product.rating.count})</p>
                     </div>
                   </div>
-            </div>`
-    }).join("");
+            </div>`;
+    })
+    .join("");
   productFlashSaleContainer.innerHTML = productFS;
-  const addToProductCart = document.querySelectorAll('.add-card');
+  const addToProductCart = document.querySelectorAll(".add-card");
   addToProductCart.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      console.log(e.target.parentElement.parentElement.parentElement.querySelector('.product-title-text').textContent);
-      console.log(e.target.parentElement.parentElement.parentElement.querySelector('.product-price').querySelector('h4').textContent);
-    })
-  })
-  const favBtns = document.querySelectorAll('.favoriButton');
+    item.addEventListener("click", (e) => {
+      console.log(
+        e.target.parentElement.parentElement.parentElement.querySelector(
+          ".product-title-text"
+        ).textContent
+      );
+      console.log(
+        e.target.parentElement.parentElement.parentElement
+          .querySelector(".product-price")
+          .querySelector("h4").textContent
+      );
+    });
+  });
+  const favBtns = document.querySelectorAll(".favoriButton");
   favBtns.forEach((item) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener("click", (e) => {
       e.target.textContent = "♥";
-    })
-  })
+    });
+  });
 }
-
 
 function renderRatingStars(rating) {
   let stars = "";
   const emptyStars = 5 - Math.round(rating);
   for (let i = 0; i < Math.round(rating); i++) {
-    stars += '<img src="images/starNone.png" />'
+    stars += '<img src="images/starNone.png" />';
   }
   if (stars !== 0) {
     for (let z = 0; z < emptyStars; z++) {
-      stars += '<img src="images/star.png" />'
+      stars += '<img src="images/star.png" />';
     }
+  } else {
   }
-  else { }
   return stars;
 }
 
 const initSlider = () => {
-  const productList = document.querySelector(".todaysProduct .product-Flash-Sale-Container");
-  const slideButtons = document.querySelectorAll(".productDirection .direction-Button");
+  const productList = document.querySelector(
+    ".todaysProduct .product-Flash-Sale-Container"
+  );
+  const slideButtons = document.querySelectorAll(
+    ".productDirection .direction-Button"
+  );
   const maxScrollLeft = productList.scrollWidth - productList.clientWidth;
 
-  slideButtons.forEach(button => {
+  slideButtons.forEach((button) => {
     button.addEventListener("click", () => {
       let direction;
       if (button.id === "prevButton") {
         direction = -1;
-      }
-      else {
+      } else {
         direction = 1;
       }
       const scrollAmount = productList.clientWidth * direction;
@@ -286,13 +301,15 @@ const initSlider = () => {
     });
   });
   const handleSlideButtons = () => {
-    slideButtons[0].style.display = productList.scrollLeft <= 0 ? "none" : "block";
-    slideButtons[1].style.display = productList.scrollLeft >= 4960 ? " none" : "block";
-  }
+    slideButtons[0].style.display =
+      productList.scrollLeft <= 0 ? "none" : "block";
+    slideButtons[1].style.display =
+      productList.scrollLeft >= 4960 ? " none" : "block";
+  };
   productList.addEventListener("scroll", () => {
     handleSlideButtons();
   });
-}
+};
 window.addEventListener("load", initSlider);
 
 function makeDiscountPrice(price, discount) {
@@ -300,4 +317,3 @@ function makeDiscountPrice(price, discount) {
 }
 
 //Flash Sale End
-
