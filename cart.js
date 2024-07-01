@@ -94,3 +94,11 @@ updateBtn.addEventListener("click", () => {
   total.textContent = `${calculateTotal()} $`;
 
 });
+function deleteFromCardProducts(deletedProductId) {
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+  const filteredProducts = cartProducts.filter(
+    (product) => product.id !== deletedProductId
+  );
+  localStorage.setItem("cartProducts", JSON.stringify(filteredProducts));
+  renderCartProducts();
+ }
