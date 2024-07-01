@@ -6,6 +6,27 @@
     <title>Exclusive E-Commerce</title>
     <link rel="stylesheet" href="styles/shared.css" />
     <link rel="stylesheet" href="styles/index.css" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Umut Start Today Prodact-->
+    <div class="todaysProduct">
+      <div class="todaysProductTitle">
+        <div class="todaysProductLine"></div>
+        <h3 class="todaysTitle">Today's</h3>
+      </div>
+      <div class="todayFlashSales">
+        <div class="tfsTitle">
+          <h2>Flash Sales</h2>
+        </div>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -201,6 +222,7 @@
         <div class="tfsTitle">
           <h2>Flash Sales</h2>
         </div>
+
         <div class="todayProductTimer">
           <div class="tfsDays">
             <p>Days</p>
@@ -208,6 +230,7 @@
           </div>
           <div class="tfsSection">
             <h3>:</h3>
+
           </div>
           <div class="tfsHours">
             <p>Hours</p>
@@ -227,6 +250,27 @@
             <p>Seconds</p>
             <h2 id="remaininSeconds"></h2>
           </div>
+
+          </div>
+          <div class="tfsHours">
+            <p>Hours</p>
+            <h2 id="remaininHours"></h2>
+          </div>
+          <div class="tfsSection">
+            <h3>:</h3>
+          </div>
+          <div class="tfsMunite">
+            <p>Munite</p>
+            <h2 id="remaininMinutes"></h2>
+          </div>
+          <div class="tfsSection">
+            <h3>:</h3>
+          </div>
+          <div class="tfsSeconds">
+            <p>Seconds</p>
+            <h2 id="remaininSeconds"></h2>
+          </div>
+
           <div class="productDirection">
             <div class="button-direction-prev">
               <button class="direction-Button" id="prevButton">
@@ -299,6 +343,28 @@
         </div>
       </div>
     </div>
+    <!-- MA-6 Start -->
+    <section class="product-section">
+      <span class="head-span">
+        <img class="head-span-img" src="images/redrec.svg" />
+        <h3>Our Products</h3>
+      </span>
+      <div class="header">
+        <h1>Explore Our Products</h1>
+        <div class="navigation">
+          <button id="prevBtn">
+            <img class="previmg" src="images/arrow2.svg" />
+          </button>
+          <button id="nextBtn">
+            <img class="previmg" src="images/arrow.svg" />
+          </button>
+        </div>
+      </div>
+      <div class="products-container" id="productsContainer"></div>
+      <button class="view-all-btn" id="viewAllBtn">View All Products</button>
+    </section>
+    <div id="notification" class="notification"></div>
+    <!-- MA-6 Ended -->
     <script src="app.js"></script>
   </body>
 </html>
